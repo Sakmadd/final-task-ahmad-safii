@@ -44,12 +44,12 @@ const mainFunctionSortArray = (arr) => {
 
 }
 
-const numbersInputArray = [22, 53, 43, 34, 88, 10, 92, 41, 50, 44, 62, 78];
+// const numbersInputArray = [22, 53, 43, 34, 88, 10, 92, 41, 50, 44, 62, 78];
 
-const result = mainFunctionSortArray(numbersInputArray)
+// const result = mainFunctionSortArray(numbersInputArray)
 
-console.log('Sorted Numbers :', result.sortedNumbers)
-console.log('----------------------------------------')
-console.log('Odd Numbers :', result.evenNumbers)
-console.log('----------------------------------------')
-console.log('Even Numbers :', result.oddNumbers)
+// console.log('Sorted Numbers :', result.sortedNumbers)
+// console.log('----------------------------------------')
+// console.log('Odd Numbers :', result.evenNumbers)
+// console.log('----------------------------------------')
+// console.log('Even Numbers :', result.oddNumbers)
