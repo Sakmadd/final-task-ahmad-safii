@@ -1,3 +1,41 @@
-h2 {
-  font-size: 100px;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: rgb(17, 22, 30);
+}
+
+.dissapear {
+  display: none;
+}
+
+main {
+  margin: auto;
+  max-width: 80%;
+  color: rgb(209, 210, 213);
+  min-height: 100vh;
+}
+
+.icon--sm {
+  fill: rgb(211, 211, 211);
+  height: 30px;
+  width: 30px;
+}
+.popup {
+  border-radius: 15px;
+  text-align: center;
+  margin: 20px;
+  left: 50%; 
+  width: 400px; 
+  margin-left: -200px;
+  position: fixed;
+  z-index: 999999;
+  transition: opacity 1s ease-out, transform 1.5s ease-out;
+}
+
+.popup-hidden {
+  opacity: 0;
+  transform: translateY(-150px);
+
 }

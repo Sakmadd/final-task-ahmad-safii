@@ -1,0 +1,31 @@
+
+  {{>navbar}}
+  {{>popup}}
+  <main>
+    {{#if user}}
+			<div class="bacground-header" ></div>
+					<div class="font-medium spacing-wide absolute bg-white rounded-lg shadow-lg w-full max-w-[30%] top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-[50px] px-[40px] text-blue-950 text-center">
+							<h2 class="text-4xl">Hey!</h2>
+              <h4>Welcome Back, {{user.username}}! 🫡</h4>
+              <p>Do you want navigate to <a href="home">Home Page?</a></p>
+					</div>
+    {{else}}
+      <div class="auth-form text-center m-auto p-10 sm:max-w-[450px] lg:max-w-[550px] xl:max-w-[650px]">
+        <h2 class="text-5xl p-20 text-berani">Login</h2>
+        <form action="/users/login" method="post">
+            <div class="form-group">
+                <input class="input-style" type="email" id="email" name="email" required placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input class="input-style" type="password" id="password" name="password" required placeholder="Password">
+            </div>
+            <div class="form-group">
+                <button class="button-style" type="submit" id="submit-button">Login</button>
+            </div>
+            <p class="p-10">Don't have an account yet? <a href="/users/register">Register</a></p>
+        </form>
+      </div>
+    {{/if}}
+  </main>
+  <script src="../../public/js/popup.js"></script>
+  {{>footer}}

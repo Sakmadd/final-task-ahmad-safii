@@ -20,10 +20,16 @@ const newUtilities = {
     borderRadius: '25px',
     fontSize: '16px',
     cursor: 'pointer',
+    color: 'rgb(17, 22, 30)',
+    fontWeight: '500',
     transition: 'background-color 0.3s',
-    color: '#fff',
     boxSizing: 'border-box',
     backgroundColor: 'rgb(209, 250, 213)',
+  },
+  spacing: {
+    'wide': '0.25em',
+    'wider': '0.5em',
+    'widest': '1em',
   },
 }
 
