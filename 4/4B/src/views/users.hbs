@@ -1,0 +1,9 @@
+{{>navbar}}
+  <main>
+    {{#if (equals title 'Register')}}
+    {{>register}}
+    {{else}}
+    {{>login}}
+    {{/if}}
+  </main>
+{{>footer}}

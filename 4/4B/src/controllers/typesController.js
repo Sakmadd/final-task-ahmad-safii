@@ -4,8 +4,8 @@ const addType = async (req, res) => {
   const { name } = req.body
   
   try {
-    const newType = await query('INSERT INTO type_tb (name) VALUES ($1) RETURNING *', [name])
-    res.json(newType.rows[0])
+    await query('INSERT INTO type_tb (name) VALUES ($1) RETURNING *', [name])
+    res.redirect('/types/add')
   } catch (err) {
     console.log(err)
   } 
@@ -25,7 +25,7 @@ const editType = async (req, res) => {
       return res.status(404).json({ msg: 'Type not found' })
     }
 
-    res.json(updatedType.rows[0])
+    res.redirect('/types/add')
   } catch (err) {
     console.error(err.message)
     res.status(500).send('Server error')
@@ -42,15 +42,29 @@ const deleteType = async (req, res) => {
       return res.status(404).json({ msg: 'Type not found' })
     }
 
-    res.json({ msg: 'Type deleted successfully' })
+    res.redirect('/types/add')
   } catch (err) {
     console.error(err.message)
     res.status(500).send('Server error')
   }
 }
+const addTypeView = async (req,res) => {
+  const user = req.session.user
+  const types = await query('SELECT * FROM type_tb ')
+  res.render('types', {user, title: 'Add Types', types : types.rows})
+}
+const editTypeView = async (req,res) => {
+  const { id } = req.params
+  const user = req.session.user
+  const selectedType = await query('SELECT * FROM type_tb WHERE id = $1', [id])
+  res.render('types', {user, type: selectedType.rows[0], title: 'Edit Types'})
+}
+
 
 module.exports = {
   addType,
   editType,
-  deleteType
+  deleteType,
+  addTypeView,
+  editTypeView
 }

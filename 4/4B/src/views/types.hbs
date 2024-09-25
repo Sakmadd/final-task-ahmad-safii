@@ -1,0 +1,9 @@
+{{>navbar}}
+  <main>  
+    {{#if (equals title 'Add Types')}}
+    {{>addTypes}}
+    {{else}}
+    {{>editTypes}}
+    {{/if}}
+  </main>
+{{>footer}}

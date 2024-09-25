@@ -1,0 +1,20 @@
+{{#if hero}}
+  <img
+    alt=""
+    src="{{hero.photo}}"
+    class="h-56 w-[40%] m-auto mt-10 rounded-bl-3xl rounded-tr-3xl object-cover sm:h-64 lg:h-72"
+  />
+
+  <div class="mt-4 text-center m-auto sm:items-center sm:justify-center sm:gap-4">
+    <h2 class="font-medium">{{hero.name}}</h2>
+    <p class="mt-0.5 opacity-50 sm:mt-0 pb-40">{{hero.description}}</p>
+  </div>
+  <a class="button-style block text-center" href="/heroes/edit/{{hero.id}}" type="submit" >Edit</a>
+  {{else}}
+  <div class="bacground-header" ></div>
+    <div class="font-medium spacing-wide absolute bg-white rounded-lg shadow-lg w-full max-w-[30%] top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-[50px] px-[40px] text-blue-950 text-center">
+        <h2 class="text-4xl">Oops!</h2>
+        <h4 class="p-2">Sorry, Theres no hero with that id's! 😞</h4>
+        <p>Do you want to create new <a class="text-blue-400" href="/heroes/add">Hero?</a></p>
+    </div>
+  {{/if}}

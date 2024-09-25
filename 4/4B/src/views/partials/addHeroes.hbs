@@ -1,0 +1,46 @@
+
+  <main>
+    {{#if user}}
+      <div class="auth-form text-center m-auto p-10 sm:max-w-[450px] lg:max-w-[550px] xl:max-w-[650px]">
+        <h2 class="text-5xl p-20 text-berani">Add Heroes</h2>
+        <form action="/heroes/add" method="post">
+
+            <div class="form-group">
+                <input class="input-style" type="text" name="name" required placeholder="Name">
+            </div>
+
+            <div class="form-group">
+                <input class="input-style" type="text" name="description" required placeholder="Description">
+            </div>
+
+            <div class="form-group flex items-center space-x-4 justify-center">
+              
+              
+              <label for="file-input" class="bg-white w-[50%] p-4 mb-2 border border-gray-300 rounded-full text-base text-gray-700 box-border text-start"><span id="file-name" class="text-gray-600">No file chosen</span></label>
+              <input class="hidden" id="file-input" type="file" name="image" required placeholder="Image" onchange="previewImage()">
+              
+              <select name="type" id="type" class="bg-white w-[50%] p-4 mb-2 border border-gray-300 rounded-full text-base text-gray-700 box-border">
+                {{#each types}}
+                <option value="{{this.id}} " class="w-full p-10 mb-10 border border-gray-300 rounded-full text-base text-gray-700 box-border ">{{this.name}}</option>
+                {{/each}}
+              </select>
+            </div>
+
+              <img id="image-preview" class="m-auto p-10 hidden w-48 h-48 object-cover rounded-lg" alt="Image Preview">
+            <div class="form-group">
+                <button class="button-style" type="submit" >Add</button>
+            </div>
+        </form>
+      </div>
+    {{else}}
+      <div class="bacground-header" >
+      <div class="font-medium spacing-wide absolute bg-white rounded-lg shadow-lg w-full max-w-[30%] top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-[50px] px-[40px] text-blue-950 text-center">
+          <h2 class="text-4xl">Oops!</h2>
+          <h4 class="p-2">Sorry, To add heroes you had to login! 😞</h4>
+          <p>Do you want navigate to <a class="text-blue-400" href="/users/login">Login?</a></p>
+      </div>
+    {{/if}}
+
+    
+  </main>
+  <script src="../../../public/js/popup.js"></script>

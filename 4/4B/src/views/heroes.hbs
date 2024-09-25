@@ -1,0 +1,11 @@
+{{>navbar}}
+  <main>  
+    {{#if (equals title 'Add Heroes')}}
+    {{>addHeroes}}
+    {{else if (equals title 'Edit Heroes')}}
+    {{>editHeroes}}
+    {{else}}
+    {{>detailHero}}
+    {{/if}}
+  </main>
+{{>footer}}

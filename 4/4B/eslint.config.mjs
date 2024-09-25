@@ -7,8 +7,9 @@ export default [
   {languageOptions: { globals: globals.browser }},
   pluginJs.configs.recommended,
   {
-    files: ["src/**/*.js", "*.js"], 
+    files: ["**/**/*.js"], 
     rules: {
+      "no-unused-vars": "off",
       "no-undef": "off",
       "semi": ["error", "never"],  
       "quotes": ["error", "single"], 

@@ -1,6 +1,9 @@
-
-  {{>navbar}}
+{{>navbar}}
   <main>
+    {{#if user}}
     {{>cards}}
+    {{else}}
+    <h2>U Not Login</h2>
+    {{/if}}
   </main>
-  {{>footer}}
+{{>footer}}

@@ -1,0 +1,29 @@
+
+  <main>
+    {{#if user}}
+      <div class="auth-form text-center m-auto p-10 sm:max-w-[450px] lg:max-w-[550px] xl:max-w-[650px]">
+        <h2 class="text-5xl p-20 text-berani">Add Types</h2>
+        <form action="/types/add" method="post">
+            <div class="form-group">
+                <input class="input-style" type="text" id="email" name="name" required placeholder="Name">
+            </div>
+            <div class="form-group">
+                <button class="button-style" type="submit" id="submit-button">Add</button>
+            </div>
+        </form>
+      </div>
+      <div class="types flex flex-wrap gap-2 justify-center">
+        {{#each types}}
+        {{>type name=this.name id=this.id}}
+        {{/each}}
+      </div>
+    {{else}}
+      <div class="bacground-header" >
+      <div class="font-medium spacing-wide absolute bg-white rounded-lg shadow-lg w-full max-w-[30%] top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-[50px] px-[40px] text-blue-950 text-center">
+          <h2 class="text-4xl">Oops!</h2>
+          <h4 class="p-2">Sorry, To add types you had to login! 😞</h4>
+          <p>Do you want navigate to <a class="text-blue-400" href="/users/login">Login?</a></p>
+      </div>
+    {{/if}}
+  </main>
+  <script src="../../public/js/popup.js"></script>

@@ -1,5 +1,4 @@
 const newUtilities = {
-  
   '.text-berani': {
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)',
   },
@@ -32,6 +31,5 @@ const newUtilities = {
     'widest': '1em',
   },
 }
-
 
 module.exports = {newUtilities}

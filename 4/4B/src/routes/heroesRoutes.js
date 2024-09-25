@@ -1,11 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const { addHero, getHero, editHero, deleteHero } = require('../controllers/heroesController')
-const authAccess = require('../middlewares/auth')
+const { addHero, editHero, deleteHero, addHeroView, editHeroView, detailHeroView } = require('../controllers/heroesController')
 
-router.post('', authAccess, addHero)
-router.get('/:id', getHero)
-router.put('/:id', editHero)
-router.delete('/:id', deleteHero)
+router.get('/add', addHeroView)
+router.get('/edit/:id', editHeroView)
+router.get('/:id', detailHeroView)
+router.post('/add', addHero)
+router.post('/edit/:id', editHero)
+router.post('/delete/:id', deleteHero)
 
 module.exports = router
