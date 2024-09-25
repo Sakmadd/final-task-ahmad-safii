@@ -1,7 +1,7 @@
 const query = require('../middlewares/postgresdb')
 
 const homeView = async (req,res) => {
-  const user = req.session.user
+  const user = req.session.users
   const heroes = await query(`
             SELECT 
                 h.id AS id,
